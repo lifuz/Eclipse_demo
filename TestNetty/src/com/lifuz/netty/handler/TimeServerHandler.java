@@ -47,11 +47,13 @@ public class TimeServerHandler extends ChannelHandlerAdapter {
 		ctx.flush();
 	}
 
+	/**
+	 * 异常处理方法
+	 */
 	@Override
 	public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause)
 			throws Exception {
 		ctx.close();
-		System.out.println("服务器异常退出" + cause.getMessage());
 	}
 
 }
