@@ -11,6 +11,17 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.Set;
 
+
+/**
+ * 处理服务器的全部操作，包括：
+ * 启动服务器
+ * 接收客户机的连接
+ * 接收客户机的消息
+ * 向客户机发送数据
+ * @author 李富
+ * @date 2015年8月5日
+ *
+ */
 public class MultiplexerTimeServer implements Runnable {
 
 	private Selector selector;
@@ -93,7 +104,6 @@ public class MultiplexerTimeServer implements Runnable {
 
 	/**
 	 * 根据的key事件的类型，来分别处理
-	 * 
 	 * @param key
 	 * @throws IOException
 	 */
