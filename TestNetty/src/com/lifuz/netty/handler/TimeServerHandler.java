@@ -49,6 +49,7 @@ public class TimeServerHandler extends ChannelHandlerAdapter {
 
 	/**
 	 * 异常处理方法
+	 * 关闭通道
 	 */
 	@Override
 	public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause)
