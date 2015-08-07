@@ -1,7 +1,12 @@
 package com.lifuz.netty.bean;
 
 import java.io.Serializable;
-
+/**
+ * 
+ * @author 李富  on 2015年8月7日
+ * @mail lifuzz@163.com
+ *
+ */
 public class SubscribeResp implements Serializable {
 
 	

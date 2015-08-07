@@ -27,9 +27,10 @@ public class TimeClient {
 		//配置客户端NIO线程组
 		Bootstrap boot = new Bootstrap();
 		
-		boot.group(group)
-			.channel(NioSocketChannel.class)
-			.option(ChannelOption.TCP_NODELAY, true)
+		boot.group(group) //配置客户端处理读写数据的线程组
+			.channel(NioSocketChannel.class)	//配置tcp监听
+			.option(ChannelOption.TCP_NODELAY, true) //配置tcp参数
+			//配置i/o处理事件处理的handler
 			.handler(new ChannelInitializer<SocketChannel>() {
 
 				@Override

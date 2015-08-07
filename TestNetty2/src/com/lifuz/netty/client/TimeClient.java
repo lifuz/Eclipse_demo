@@ -27,7 +27,7 @@ public class TimeClient {
 		//配置客户端NIO线程组
 		EventLoopGroup group = new NioEventLoopGroup();
 		
-		//配置客户端NIO线程组
+		//定义客户端辅助启动类
 		Bootstrap boot = new Bootstrap();
 		
 		boot.group(group)
