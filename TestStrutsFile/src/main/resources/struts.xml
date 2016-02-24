@@ -3,11 +3,34 @@
 	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
 	"http://struts.apache.org/dtds/struts-2.3.dtd">
 <struts>
+
+	<!-- 配置国际化资源文件 -->
+	<constant name="struts.custom.i18n.resources" value="i18n"></constant>
+	<!-- 上传文件的总大小 -->
+	<constant name="struts.multipart.maxSize" value="3211850"/>
 	<package name="my" extends="struts-default">
-		<action name="test">
-		
-			<result>/index.jsp</result>
-		
+
+
+		<interceptors>
+
+			<interceptor-stack name="prdstack">
+				<interceptor-ref name="defaultStack">
+					<!-- 单个文件的最大值 -->
+					<param name="fileUpload.maximumSize">3211850</param>
+					<!-- 允许的上传文件的类型. 多个使用 , 分割 -->
+					<!-- <param name="fileUpload.allowedTypes">text/html,text/xml</param> -->
+					<!-- 允许的上传文件的扩展名. 多个使用 , 分割. -->
+					<!--<param name="fileUpload.allowedExtensions">html,dtd,xml</param> -->
+				</interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+
+		<default-interceptor-ref name="prdstack"></default-interceptor-ref>
+
+		<action name="upload" class="com.prd.action.UploadAction">
+
+			<result>/success.jsp</result>
+			<result name="input">/index.jsp</result>
 		</action>
 	</package>
 
